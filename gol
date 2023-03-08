@@ -1,0 +1,19 @@
+import random
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+
+def generate_word():
+    word = ""
+    length = random.randint(3, 8) # случайная длина слова от 3 до 8 букв
+    for i in range(length):
+        if i % 2 == 0:
+            # выбираем случайную гласную букву, если индекс буквы четный
+            letter = random.choice(vowels)
+        else:
+            # выбираем случайную согласную букву, если индекс буквы нечетный
+            letter = random.choice(consonants)
+        word += letter
+    return word.capitalize() # первая буква заглавная
+
+print(generate_word())
